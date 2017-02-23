@@ -1,0 +1,5 @@
+<div ng-controller='quoteController'>
+	
+	<h1>Here are all the Quotes by {{showOneAuthor[0]['author']}}:</h1>
+	<div  style='border: thin solid black' ng-repeat='quote in showOneAuthor'>{{quote.content}}</div>
+</div>

@@ -1,0 +1,13 @@
+<div ng-controller='quoteController'>
+
+	<p ng-repeat='error in errors' style='color: red'>{{error}}</p>
+	<form ng-submit='addQuote()'>
+		<label>Date: </label><input type="date" ng-model='newQuote.date'><br><br>
+		<label>Author: </label><input type="text" ng-model='newQuote.author'><br><br>
+		<label>Quote: </label><textarea style='height:300px; width:300px' ng-model='newQuote.content'></textarea><br>
+		<input type="submit" value="submit">
+	</form></div>
+		
+
+	</form>
+</div>

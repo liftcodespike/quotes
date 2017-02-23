@@ -1,0 +1,27 @@
+
+
+<div ng-controller='sessionController'>
+	Welcome, {{curUser.name[0].toUpperCase() + curUser.name.slice(1)}}! <a href="/logout">logout</a>
+</div>
+
+<div ng-controller='quoteController'>
+	<table border='1'>
+		<tr>
+			<td>Quote</td>
+			<td>Author</td>
+			<td>Date</td>
+			<td>Likes</td>
+			<td>Action</td>
+		</tr>
+		<tr ng-repeat="quote in quotes | orderBy:'-likes' | limitTo: 3">
+			<td>{{quote.content}}</td>
+			<td><a href="#/showone/{{quote.author}}" >{{quote.author}}</a></td>
+			<td>{{quote.date | date: medium}}</td>
+			<td>{{quote.likes}}</td>
+			<td><a href="" ng-click='addLike(quote._id)'>Like this quote!</a></td>
+		</tr>
+	</table>
+</div>
+
+<a href="#/showall">Show more...</a><br>
+<a href="#/addquote">Click here to Add a new Quote</a>

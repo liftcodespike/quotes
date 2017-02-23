@@ -1,0 +1,20 @@
+<div ng-controller='sessionController'>
+</div>
+<div ng-controller='quoteController'>
+	<table border='1'>
+		<tr>
+			<td>Quote</td>
+			<td>Author</td>
+			<td>Date</td>
+			<td>Likes</td>
+			<td>Action</td>
+		</tr>
+		<tr ng-repeat='quote in quotes | orderBy: likes '>
+			<td>{{quote.content}}</td>
+			<td>{{quote.author}}</td>
+			<td>{{quote.date | date: medium}}</td>
+			<td>{{quote.likes}}</td>
+			<td><a href="" ng-click='addLike(quote._id)'>Like this quote!</a></td>
+		</tr>
+	</table>
+</div>
